@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JS IP Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS IP Info: your IP address, its location and what DNS says about it.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <div class="content">
+      <div class="pure-g gutters">
+        <div class="pure-u-1">
+          <div class="l-box">
+            <h1>JS IP Info</h1>
+            <p><code class="ip" id="ipHero">113.161.179.21</code></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g gutters center">
+        <div class="pure-u-1 pure-u-md-1-2 col">
+          <div class="l-box">
+            <table class="info-table">
+              <tbody>
+                <tr><th scope="row">IP&nbsp;address</th><td data-field="ip"></td></tr>
+                <tr><th scope="row">Country</th><td data-field="country_full"></td></tr>
+                <tr><th scope="row">Region</th><td data-field="region_full"></td></tr>
+                <tr><th scope="row">City</th><td data-field="city"></td></tr>
+                <tr><th scope="row">Latitude</th><td data-field="latitude"></td></tr>
+                <tr><th scope="row">Longitude</th><td data-field="longitude"></td></tr>
+                <tr><th scope="row">Timezone</th><td data-field="time_zone"></td></tr>
+                <tr><th scope="row">ASN</th><td data-field="asn_full"></td></tr>
+                <tr><th scope="row">Hostname</th><td data-field="hostname"></td></tr>
+                <tr><th scope="row">User&nbsp;agent</th><td data-field="ua_product"></td></tr>
+                <tr><th scope="row">User&nbsp;agent: Comment</th><td data-field="ua_comment"></td></tr>
+                <tr><th scope="row">User&nbsp;agent: Raw</th><td data-field="ua_raw"></td></tr>
+              </tbody>
+            </table>
+
+            <table class="info-table">
+              <tbody>
+                <tr><th scope="row">Reverse DNS (PTR)</th><td data-dns="ptr">Looking up…</td></tr>
+                <tr><th scope="row">Forward-confirmed</th><td data-dns="fcrdns">Looking up…</td></tr>
+                <tr><th scope="row">Your DNS resolver</th><td data-dns="resolver_ip">Looking up…</td></tr>
+                <tr><th scope="row">Resolver network</th><td data-dns="resolver_geo">Looking up…</td></tr>
+                <tr><th scope="row">EDNS client subnet</th><td data-dns="edns">Looking up…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="l-box">
+            <p class="address" id="address">Looking up the address…</p>
+            <iframe id="map" class="map-frame" title="Google map of the IP address location" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+            <table class="info-table history-table">
+              <thead>
+                <tr><th scope="col">Time</th><th scope="col">IP address</th></tr>
+              </thead>
+              <tbody id="history"></tbody>
+            </table>
+            <p class="history-empty" id="historyEmpty">No lookups yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

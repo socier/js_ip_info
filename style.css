@@ -1,0 +1,163 @@
+/* Theme tokens taken from the original page */
+:root {
+  --font-body: "Open Sans", sans-serif;
+  --font-pre: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+  --font-widget: "Courier New", Courier, monospace;
+  --text: #000;
+  --page-bg: #fff;
+  --ip-border: #cbcbcb;
+  --ip-bg: #f2f2f2;
+  --link-hover-bg: #d7d7d7;
+  --table-border: #ababab;
+  --row-head-bg: #d5d5d5;
+  --button-selected: rgb(208 208 208);
+  --content-width: 1024px;
+}
+
+html,
+.pure-g [class*="pure-u"] {
+  background-color: var(--page-bg);
+  font-family: var(--font-body);
+}
+
+pre {
+  font-family: var(--font-pre);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--text);
+}
+
+a:hover,
+a:active {
+  background: var(--link-hover-bg);
+}
+
+.ip {
+  border: 1px solid var(--ip-border);
+  background: var(--ip-bg);
+  font-size: 36px;
+  padding: 6px;
+  word-wrap: break-word;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: var(--content-width);
+}
+
+.center {
+  justify-content: center;
+}
+
+/* The tables have no heading above them, so they keep their own space from the top block. */
+.info-table {
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+/* First thing in the right column, so it lines up with the top of the tables on the left. */
+.address {
+  margin: 1.5em 0 0.75em;
+}
+
+.history-table td:first-child {
+  white-space: nowrap;
+}
+
+.history-empty.hidden {
+  display: none;
+}
+
+.info-table td,
+.info-table th {
+  padding: 5px;
+  border: 2px solid var(--table-border);
+  word-wrap: break-word;
+}
+
+.info-table th[scope="row"],
+.info-table th[scope="col"] {
+  background-color: var(--row-head-bg);
+  text-align: left;
+}
+
+.info-table tr.hidden {
+  display: none;
+}
+
+.widgetbox {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  font-family: var(--font-widget);
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+.widgetbox.input :first-child::before {
+  content: "$ ";
+  white-space: pre;
+}
+
+.widgetbox.output {
+  min-height: 4em;
+  white-space: pre;
+  overflow-x: scroll;
+}
+
+.l-box {
+  margin: 0 1rem;
+}
+
+button.selected {
+  background-color: var(--button-selected);
+}
+
+.input-buttons {
+  line-height: 2.6em;
+  font-size: smaller;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  .pure-g [class*="pure-u"],
+  a {
+    background-color: #161719;
+    color: #d8d9da;
+  }
+  .ip {
+    border: 1px solid #313233;
+    background: #212223;
+  }
+  a:hover,
+  a:active {
+    background: #3d3e3f;
+  }
+  .info-table th[scope="row"],
+  .info-table th[scope="col"] {
+    background-color: #2e2e2e;
+    color: rgb(220, 220, 220);
+  }
+  .pure-button {
+    background-color: #2e2e2e;
+    color: rgb(220, 220, 220);
+  }
+  .pure-button.selected {
+    background-color: rgb(125 125 125);
+  }
+  .pure-input {
+    background-color: #e6e6e6;
+    color: #666;
+  }
+  .pure-input::placeholder {
+    color: #bbb;
+  }
+}
+
